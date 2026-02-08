@@ -1,0 +1,397 @@
+:root {
+ 
+    --red: #D6342A;      
+    --green: #8AA84D;     
+    --orange: #933800;     
+    --dark-green: #3F5A2F;  
+    --beige: #D3C3AF;       
+    --light-green: #F2FAED; 
+
+    --primary: var(--green);        
+    --secondary: var(--dark-green);  
+    --accent: var(--orange);          
+    --danger: var(--red);              
+    --neutral-light: var(--beige);    
+    --bg-light: var(--light-green);    
+    
+    --text-dark: #000000;           
+    --text-gray: #333333;              
+    --text-light: #666666;       
+    --white: #FFFFFF;                  
+    --black: #000000;                  
+
+    --border-light: rgba(0, 0, 0, 0.1);    
+    --border-medium: rgba(0, 0, 0, 0.2);   
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);   
+    --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-green: 0 6px 20px rgba(138, 168, 77, 0.2); 
+    
+    --container-width: 1200px;        
+    --border-radius-sm: 8px;           
+    --border-radius-md: 12px;      
+    --border-radius-lg: 24px;        
+    --border-radius-full: 50px;      
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);           
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-size: 16px;                
+    line-height: 1.6;          
+    min-height: 100vh;             
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;              
+    padding: 0 20px;               
+}
+.main-nav {
+    background-color: var(--white);   
+    padding: 15px 0;                   
+    position: sticky;               
+    top: 0;                  
+    z-index: 1000;               
+    box-shadow: var(--shadow-light);  
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;                        
+    text-decoration: none;          
+}
+.logo-icon {
+    font-size: 32px;                  
+}
+.logo-text {
+    font-family: 'IM FELL Great Primer', serif; 
+    font-size: 28px;                 
+    font-weight: 400;                
+    color: var(--secondary);         
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;                       
+    list-style: none;              
+}
+
+.nav-item {
+    font-family: 'Kurale', serif;     
+    font-weight: 400;               
+    font-size: 36px;                  
+    color: var(--secondary);     
+    text-decoration: none;       
+    padding: 8px 16px;              
+    border-radius: var(--border-radius-sm); 
+    transition: all 0.3s ease;     
+    position: relative;                
+}
+
+.nav-item:hover {
+    color: var(--primary);             
+    background-color: rgba(138, 168, 77, 0.1); 
+}
+
+.nav-item.active {
+    color: var(--primary);             
+}
+
+.nav-item.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+    right: 16px;
+    height: 3px;
+    background-color: var(--primary); 
+    border-radius: 2px;
+}
+
+.hero-section {
+    text-align: center;              
+    padding: 100px 20px 150px;      
+    background: linear-gradient(135deg, var(--white) 0%, var(--neutral-light) 100%);
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg); 
+    margin-bottom: 40px;         
+}
+.main-title {
+    font-family: 'IM FELL Great Primer', serif; 
+    font-weight: 400;                
+    font-size: 96px;                  
+    line-height: 74px;           
+    color: var(--text-dark);      
+    width: 441px;                      
+    margin: 0 auto 20px;              
+    text-align: center;
+}
+
+.main-subtitle {
+    font-family: 'Kurale', serif;     
+    font-weight: 400;                
+    font-size: 48px;                
+    line-height: 52px;                
+    color: var(--secondary);           
+    width: 544px;                 
+    margin: 0 auto;                  
+    text-align: center;
+}
+
+.welcome-section {
+    background-color: var(--white);  
+    border-radius: var(--border-radius-lg); 
+    padding: 80px 40px;               
+    margin: 0 auto 60px;         
+    max-width: 1000px;             
+    box-shadow: var(--shadow-medium); 
+    text-align: center;          
+}
+.welcome-text {
+    font-family: 'IM FELL Great Primer', serif; 
+    font-weight: 400;                 
+    font-size: 48px;                 
+    line-height: 59px;        
+    color: var(--text-dark);         
+    width: 704px;                  
+    max-width: 100%;                   
+    margin: 0 auto 60px;           
+}
+
+.categories-section {
+    text-align: center;           
+    margin-bottom: 80px;           
+}
+
+.categories-title {
+    font-family: 'Kurale', serif;    
+    font-size: 36px;                   
+    color: var(--secondary);           
+    margin-bottom: 40px;              
+}
+
+.categories-container {
+    display: flex;
+    justify-content: center;         
+    gap: 60px;                     
+    flex-wrap: wrap;                   
+}
+
+.category-item {
+    width: 180px;                      
+    height: 180px;                    
+    border-radius: 50%;          
+    display: flex;
+    flex-direction: column;      
+    align-items: center;            
+    justify-content: center;           
+    text-decoration: none;             
+    transition: all 0.3s ease;         
+    box-shadow: var(--shadow-medium);  
+    position: relative;      
+}
+
+.category-first {
+    background-color: var(--red);   
+    color: var(--white);              
+}
+
+.category-second {
+    background-color: var(--green);    
+    color: var(--white);           
+}
+
+.category-bakery {
+    background-color: var(--orange); 
+    color: var(--white);            
+}
+
+.category-dessert {
+    background-color: var(--dark-green);
+    color: var(--white);          
+}
+
+.category-salad {
+    background-color: var(--beige);   
+    color: var(--text-dark);      
+}
+
+.category-drink {
+    background-color: var(--light-green); 
+    color: var(--text-dark);         
+}
+
+.category-item:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15); 
+}
+
+.category-name {
+    font-family: 'Kurale', serif;      
+    font-size: 24px;                
+    font-weight: 400;    
+    margin-top: 10px;             
+}
+
+.category-icon {
+    font-size: 48px;                
+    margin-bottom: 5px;                
+}
+
+.recipes-section {
+    padding: 60px 20px;             
+    background-color: var(--white);    
+    border-radius: var(--border-radius-lg);
+    margin: 0 auto 80px;             
+    max-width: 1400px;             
+}
+.section-title {
+    font-family: 'IM FELL Great Primer', serif; 
+    font-size: 48px;              
+    text-align: center;        
+    color: var(--secondary);     
+    margin-bottom: 50px;             
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 30px;                         
+}
+
+.recipe-card {
+    background-color: var(--white);  
+    border-radius: var(--border-radius-md);
+    overflow: hidden;        
+    box-shadow: var(--shadow-light); 
+    transition: all 0.3s ease;      
+    border: 1px solid var(--border-light); 
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);    
+    box-shadow: var(--shadow-medium);  
+}
+
+.recipe-image {
+    width: 100%;           
+    height: 200px;                   
+    object-fit: cover;       
+    background-color: var(--neutral-light); 
+}
+
+.recipe-content {
+    padding: 20px;     
+}
+
+.recipe-category {
+    display: inline-block;
+    background-color: var(--primary);  
+    color: var(--white);            
+    padding: 4px 12px;                
+    border-radius: var(--border-radius-full); 
+    font-size: 12px;               
+    font-weight: 600;         
+    margin-bottom: 10px;     
+}
+
+.recipe-title {
+    font-family: 'Kurale', serif;  
+    font-size: 24px;                 
+    color: var(--text-dark);       
+    margin-bottom: 10px;        
+}
+
+.recipe-description {
+    color: var(--text-light);       
+    font-size: 14px;     
+    line-height: 1.5;              
+    margin-bottom: 15px;         
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between; 
+    color: var(--text-gray);          
+    font-size: 14px;                
+    border-top: 1px solid var(--border-light);
+    padding-top: 15px;            
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;                   
+}
+
+.site-footer {
+    background-color: var(--secondary);
+    color: var(--white);             
+    padding: 60px 20px 40px;          
+    margin-top: auto;              
+}
+
+.footer-content {
+    text-align: center;          
+    max-width: 800px;             
+    margin: 0 auto;    
+}
+
+.footer-logo {
+    font-family: 'IM FELL Great Primer', serif; 
+    font-size: 36px;                
+    margin-bottom: 20px;    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;             
+}
+.footer-text {
+    font-family: 'IM FELL Great Primer', serif; 
+    font-weight: 400;                 
+    font-size: 36px;         
+    line-height: 44px;               
+    color: var(--white);             
+    width: 669px;                    
+    max-width: 100%;             
+    margin: 0 auto 30px;             
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;      
+    gap: 30px;                         
+    margin-top: 30px;         
+    flex-wrap: wrap;            
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.8); 
+    text-decoration: none;       
+    font-size: 16px;            
+    transition: color 0.3s ease;      
+}
+
+.footer-link:hover {
+    color: var(--white);               
+    text-decoration: underline;       
+}
