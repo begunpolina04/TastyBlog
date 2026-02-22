@@ -3,12 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TastyBlog</title>
+    <meta name="description" content="TastyBlog — кулинарная вселенная для тех, кто любит готовить и пробовать новое. Рецепты, мастер-классы и кулинарное вдохновение.">
+    <title>TastyBlog — кулинарные рецепты и вдохновение</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>добро пожаловать в TastyBlog!</h1>
-    <p>это стартовая страница моего веб-приложения.</p>
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="images/TastyBlog.svg" alt="TastyBlog логотип" class="header__logo-img">
+            </div>
+            <nav class="header__nav nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link">Проекты</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Рецепты</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Продукция</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Кухни</a></li>
+                </ul>
+            </nav>
+            <div class="header__icons">
+                <a href="#" class="header__icon-link">
+                    <img src="images/icon-search.svg" alt="Поиск" class="header__icon">
+                </a>
+                <a href="#" class="header__icon-link">
+                    <img src="images/icon-profile.svg" alt="Личный кабинет" class="header__icon">
+                </a>
+                <a href="#" class="header__icon-link">
+                    <img src="images/favorites_icon.svg" alt="Избранное" class="header__icon">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="main">
+       <!-- Секция "О нас" как NewsArticle -->
+<section class="about section" itemscope itemtype="https://schema.org/NewsArticle">
+    <div class="about__container">
+        <h2 class="about__title" itemprop="headline">О нас</h2>
+        <div class="about__content" itemprop="articleBody">
+            <p class="about__text">TastyBlog — это кулинарная вселенная для тех, кто любит готовить и пробовать новое. На нашей платформе каждый может не только найти вдохновение, но и поделиться своими рецептами — добавляйте, сохраняйте и вдохновляйте других.</p>
+            <p class="about__text">Мы верим, что вкусная еда доступна каждому. На TastyBlog вы найдёте рецепты с понятными инструкциями и яркими фото — от новичков до профи. Мы создаём пространство, где можно экспериментировать, учиться и делиться опытом.</p>
+            <p class="about__text">Мы проводим мастер-классы с шеф-поварами и блогерами, где можно готовить своими руками, узнавать секреты профессионалов и отлично проводить время в компании единомышленников.</p>
+        </div>
+        <div class="about__gallery">
+            <img src="images/aboutUs_1.png" alt="Уютная атмосфера" class="about__image" itemprop="image">
+            <img src="images/aboutUs_2.png" alt="Работы участников" class="about__image">
+            <img src="images/aboutUs_3.png" alt="Мастер-класс" class="about__image">
+        </div>
+        <meta itemprop="datePublished" content="2024-01-15">
+        <meta itemprop="author" content="TastyBlog">
+    </div>
+</section>
+
+        <!-- Секция "Категории" с иконками -->
+        <section class="categories section">
+            <div class="categories__container">
+                <h2 class="categories__title">Категории</h2>
+                <div class="categories__grid">
+                    <div class="categories__item">
+                        <img src="images/category_vegan.png" alt="Веганская кухня" class="categories__icon">
+                        <span class="categories__name">Vegan</span>
+                    </div>
+                    <div class="categories__item">
+                        <img src="images/category_desserts.png" alt="Десерты" class="categories__icon">
+                        <span class="categories__name">Десерты</span>
+                    </div>
+                    <div class="categories__item">
+                        <img src="images/category_lunch.png" alt="Обед" class="categories__icon">
+                        <span class="categories__name">Обед</span>
+                    </div>
+                    <div class="categories__item">
+                        <img src="images/category_breakfast.png" alt="Завтрак" class="categories__icon">
+                        <span class="categories__name">Завтрак</span>
+                    </div>
+                    <div class="categories__item">
+                        <img src="images/category_fish.png" alt="Рыба и морепродукты" class="categories__icon">
+                        <span class="categories__name">Рыба и морепродукты</span>
+                    </div>
+                    <div class="categories__item">
+                        <img src="images/category_meat.png" alt="Мясные блюда" class="categories__icon">
+                        <span class="categories__name">Мясо</span>
+                    </div>
+                </div>
+                <a href="#" class="categories__button button">Открыть все ></a>
+            </div>
+        </section>
+
+        <!-- Секция "Популярные рецепты" с карточками Recipe -->
+        <section class="popular section">
+            <div class="popular__container">
+                <h2 class="popular__title">Популярные рецепты</h2>
+                <div class="popular__grid">
+                    
+                    <!-- Карточка рецепта 1: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_1.png" alt="Паста с брокколи и горошком" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Паста с брокколи и горошком</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT45M">45 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Вкусная паста с брокколи и зеленым горошком">
+                    </article>
+
+                    <!-- Карточка рецепта 2: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_2.png" alt="Блинный торт Пломбир" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Блинный торт «Пломбир»</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT60M">60 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Нежный блинный торт со сливочным кремом">
+                    </article>
+
+                    <!-- Карточка рецепта 3: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_3.png" alt="Паста с морепродуктами" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Паста с морепродуктами</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT45M">45 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Паста с морепродуктами в сливочном соусе">
+                    </article>
+
+                    <!-- Карточка рецепта 4: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_4.png" alt="Салат из свеклы, моркови и горошка с пшеном" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Салат из свеклы, моркови и горошка с пшеном</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT45M">45 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Полезный салат из свеклы с морковью и пшеном">
+                    </article>
+
+                    <!-- Карточка рецепта 5: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_5.png" alt="Капрезе" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Капрезе</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT45M">45 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Классический итальянский салат с моцареллой и томатами">
+                    </article>
+
+                    <!-- Карточка рецепта 6: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_6.png" alt="Меренговый рулет" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Меренговый рулет</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT45M">45 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Воздушный рулет из меренги с ягодами">
+                    </article>
+
+                    <!-- Карточка рецепта 7: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_7.png" alt="Ролл Филадельфия" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Ролл «Филадельфия»</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT45M">45 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Классические роллы с лососем и сливочным сыром">
+                    </article>
+
+                    <!-- Карточка рецепта 8: Recipe -->
+                    <article class="recipe-card" itemscope itemtype="https://schema.org/Recipe">
+                        <figure class="recipe-card__figure">
+                            <img src="images/recipe_8.png" alt="Омлет с авокадо" class="recipe-card__image" itemprop="image">
+                            <figcaption class="recipe-card__figcaption">Фото блюда</figcaption>
+                        </figure>
+                        <h3 class="recipe-card__title" itemprop="name"><a href="#" class="recipe-card__link">Омлет с авокадо</a></h3>
+                        <div class="recipe-card__info">
+                            <img src="images/time_icon.svg" alt="Время приготовления" class="recipe-card__time-icon">
+                            <p class="recipe-card__time" itemprop="cookTime" content="PT45M">45 мин</p>
+                        </div>
+                        <meta itemprop="description" content="Пышный омлет с авокадо и зеленью">
+                    </article>
+                </div>
+                <div class="popular__navigation">
+                    <a href="#" class="popular__nav-link">
+                        <img src="images/left_arrow.svg" alt="Предыдущая страница" class="popular__nav-icon">
+                    </a>
+                    <a href="#" class="popular__nav-link">
+                        <img src="images/right_arrow.svg" alt="Следующая страница" class="popular__nav-icon">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Секция "Фестиваль вкусов" как ScholarlyArticle -->
+        <section class="promo section" itemscope itemtype="https://schema.org/ScholarlyArticle">
+            <div class="promo__container">
+                <h2 class="promo__title" itemprop="headline">Фестиваль вкусов</h2>
+                <div class="promo__content-wrapper">
+                    <div class="promo__text-content">
+                        <h3 class="promo__subtitle" itemprop="alternativeHeadline">Шоколадное настроение</h3>
+                        <div class="promo__content" itemprop="articleBody">
+                            <p class="promo__text">Когда за окном холодно и серо, а на душе хочется тепла — приходит время горячего шоколада. Густой, бархатистый, с глубоким вкусом какао и нотками ванили, он словно укутывает в плед с головы до пят. Это не просто напиток, а момент чистого удовольствия, когда можно остановиться, выдохнуть и сказать себе: «всё хорошо».</p>
+                        </div>
+                        <a href="#" class="promo__button button">Подробнее о рецептах</a>
+                    </div>
+                    <figure class="promo__figure">
+                        <img src="images/festivalOfTastes.png" alt="Горячий шоколад с маршмеллоу и корицей" class="promo__image" itemprop="image">
+                        <figcaption class="promo__figcaption">Горячий шоколад с маршмеллоу</figcaption>
+                    </figure>
+                </div>
+                <meta itemprop="datePublished" content="2024-02-01">
+                <meta itemprop="author" content="TastyBlog">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <img src="images/TastyBlog.svg" alt="TastyBlog" class="footer__logo-img">
+            </div>
+            <nav class="footer__nav">
+                <ul class="footer__nav-list">
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">Личный кабинет</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">Мастер-классы</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">Адреса</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">О компании</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">Сотрудничество</a></li>
+                    <li class="footer__nav-item"><a href="#" class="footer__nav-link">Реклама</a></li>
+                </ul>
+            </nav>
+            <div class="footer__contacts">
+                <p class="footer__phone">+375 (33) 132-56-78</p>
+                <p class="footer__email">info@tastyblog.com</p>
+            </div>
+            <div class="footer__copyright">
+                <p class="footer__copyright-text">© Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="js/script.js"></script>
 </body>
 </html>

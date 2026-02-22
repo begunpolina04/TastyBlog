@@ -1,0 +1,243 @@
+:root {
+
+/* prototype */
+
+position: relative;
+width: 1280px;
+height: 720px;
+
+background: #EFDECB;
+
+
+/* Rectangle 5 */
+
+position: absolute;
+width: 1280px;
+height: 720px;
+left: 0px;
+top: 0px;
+
+background: #F2FAED;
+
+
+/* Rectangle 1 */
+
+position: absolute;
+width: 1280px;
+height: 170px;
+left: 0px;
+top: 0px;
+
+background: #8AA84D;
+
+
+/* Главная Рецепты О нас */
+
+position: absolute;
+width: 482px;
+height: 53px;
+left: 768px;
+top: 63px;
+
+font-family: 'Kurale';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 53px;
+
+color: #223516;
+
+
+
+/* TastyBlog */
+
+position: absolute;
+width: 441px;
+height: 74px;
+left: 20px;
+top: 23px;
+
+font-family: 'IM FELL Great Primer';
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 117px;
+
+color: #223516;
+
+
+
+/* Добро пожаловать в TastyBlog! */
+
+position: absolute;
+width: 704px;
+height: 59px;
+left: 288px;
+top: 190px;
+
+font-family: 'IM FELL Great Primer';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 59px;
+/* identical to box height */
+
+color: #223516;
+
+
+
+/* Rectangle 7 */
+
+position: absolute;
+width: 303px;
+height: 300px;
+left: 490px;
+top: 286px;
+
+background: #D9D9D9;
+
+
+/* image 3 */
+
+position: absolute;
+width: 300px;
+height: 300px;
+left: 490px;
+top: 286px;
+
+background: url(image.png);
+opacity: 0.3;
+
+
+/* Rectangle */
+
+position: absolute;
+width: 1280px;
+height: 71px;
+left: 0px;
+top: 649px;
+
+background: #D3C3AF;
+
+
+/* Rectangle 6 */
+
+position: absolute;
+width: 303px;
+height: 300px;
+left: 85px;
+top: 286px;
+
+background: #D9D9D9;
+
+
+/* Rectangle 8 */
+
+position: absolute;
+width: 303px;
+height: 300px;
+left: 889px;
+top: 286px;
+
+background: #D9D9D9;
+
+
+/* © 2026 TastyBlog. Все права защищены. */
+
+position: absolute;
+width: 669px;
+height: 44px;
+left: 305px;
+top: 659px;
+
+font-family: 'IM FELL Great Primer';
+font-style: normal;
+font-weight: 400;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height */
+
+color: #000000;
+
+
+
+/* image 8 */
+
+position: absolute;
+width: 300px;
+height: 300px;
+left: 892px;
+top: 286px;
+
+background: url(image);
+opacity: 0.3;
+
+
+/* image 9 */
+
+position: absolute;
+width: 300px;
+height: 300px;
+left: 88px;
+top: 286px;
+
+background: url(image.png);
+opacity: 0.3;
+
+
+/* Первое */
+
+position: absolute;
+width: 156px;
+height: 71px;
+left: 160px;
+top: 400px;
+
+font-family: 'Kurale';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 71px;
+/* identical to box height */
+
+color: #933800;
+
+
+
+/* Выпечка */
+
+position: absolute;
+width: 194px;
+height: 71px;
+left: 945px;
+top: 400px;
+
+font-family: 'Kurale';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 71px;
+/* identical to box height */
+
+color: #933800;
+
+
+
+/* Второе */
+
+position: absolute;
+width: 149px;
+height: 71px;
+left: 565px;
+top: 400px;
+
+font-family: 'Kurale';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 71px;
+/* identical to box height */
+
+color: #933800;
+
+}
