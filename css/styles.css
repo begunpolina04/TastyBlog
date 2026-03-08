@@ -1,0 +1,126 @@
+@import 'variables.css';
+@import 'header.css';
+@import 'main.css';
+@import 'footer.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  color: var(--color-black, #000);
+  background-color: var(--color-white, #fff);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== ОБЩИЕ СТИЛИ ДЛЯ СЕКЦИЙ ===== */
+.section {
+  padding: 60px 0;
+}
+
+.section__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ===== СТИЛИ ДЛЯ ПЛАНШЕТОВ ===== */
+@media (max-width: 1024px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .popular__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .about__container {
+    flex-direction: column;
+  }
+
+  .about__gallery {
+    justify-content: center;
+  }
+
+  .promo__content-wrapper {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/* ===== СТИЛИ ДЛЯ МОБИЛЬНЫХ ===== */
+@media (max-width: 768px) {
+  .section {
+    padding: 30px 0;
+  }
+
+  h2 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .categories__name {
+    font-size: 16px;
+  }
+
+  .popular__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .recipe-card__title {
+    font-size: 18px;
+  }
+
+  .about__text {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .about__gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about__image {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .promo__title {
+    font-size: 32px;
+  }
+
+  .promo__subtitle {
+    font-size: 24px;
+  }
+
+  .promo__text {
+    font-size: 16px;
+  }
+
+  .promo__image {
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}
