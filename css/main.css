@@ -1,0 +1,994 @@
+.main {
+  flex-grow: 1;
+  width: 100%;
+}
+
+/* Сетка для основного контента */
+.main__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* ===== ГЛАВНЫЙ ЭКРАН С ИЗОБРАЖЕНИЕМ ===== */
+.hero {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hero__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 75px;
+  color: white;
+  z-index: 2;
+  line-height: 1.2;
+  pointer-events: none;
+}
+
+/* Для планшетов */
+@media (min-width: 768px) {
+  .main__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Для десктопов */
+@media (min-width: 1024px) {
+  .main__grid {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .main__content {
+    grid-column: 1;
+  }
+
+  .main__sidebar {
+    grid-column: 2;
+  }
+}
+
+/* ===== СЕКЦИЯ "О НАС" ===== */
+.about {
+  padding: 60px 0;
+  background-color: var(--color-beige-light, #f4efef);
+  width: 100%;
+}
+
+.about__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.about__title {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: var(--font-size-heading, 78px);
+  font-weight: 400;
+  color: var(--color-black, #000);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about__text {
+  font-size: 28px;
+  line-height: 35px;
+  margin-bottom: 0;
+}
+.about__row,
+.about__row-reverse {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Уменьшим отступ между элементами */
+  margin-bottom: 60px;
+  flex-wrap: wrap; /* Эта строка поможет избежать растяжения на всю ширину */
+}
+
+.about__text-block {
+  flex: 1;
+  min-width: 300px; /* Задаем минимальную ширину для текстового блока */
+}
+
+.about__image-block {
+  flex: 1;
+  min-width: 300px; /* Задаем минимальную ширину для блока с изображением */
+}
+
+.about__image {
+  max-width: 100%; /* Меняем на max-width */
+  height: auto;
+  border-radius: 30px;
+}
+
+/* ===== СЕКЦИЯ "О НАС" ===== */
+.about {
+  padding: 60px 0;
+  background-color: var(--color-beige-light, #f4efef);
+  width: 100%;
+}
+
+.about__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.about__title {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: var(--font-size-heading, 78px);
+  font-weight: 400;
+  color: var(--color-black, #000);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about__text {
+  font-size: 28px;
+  line-height: 35px;
+  margin-bottom: 0;
+}
+
+.about__row,
+.about__row-reverse {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.about__text-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about__image-block {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+/* Для мобильных устройств (до 768px) - правильное чередование */
+@media (max-width: 768px) {
+  .about {
+    padding: 40px 0;
+  }
+  
+  .about__container {
+    padding: 0 20px;
+  }
+  
+  .about__title {
+    font-size: 42px;
+    margin-bottom: 30px;
+  }
+  
+  /* Сбрасываем все flex-настройки */
+  .about__row,
+  .about__row-reverse {
+    display: block;
+    margin-bottom: 0;
+    flex-direction: column; /* Сбрасываем row-reverse */
+  }
+  
+  .about__text-block {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .about__image-block {
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .about__text {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .about__image {
+    width: 100%;
+    border-radius: 20px;
+    margin: 20px 0 30px 0;
+  }
+  
+  /* Принудительное чередование: текст, фото, текст, фото, текст, фото */
+  
+ 
+  
+  .about__row:first-child .about__image-block {
+    order: 1;
+    display: block;
+    margin-bottom: 40px;
+  }
+ 
+  
+  .about__row-reverse .about__text-block {
+    order: 2;
+    display: block;
+  }
+  
+  .about__row-reverse .about__image-block {
+    order: 4;
+    display: block;
+    margin-bottom: 40px;
+  }
+  
+  /* Блок 3: Текст + Фото */
+  .about__row:last-child .about__text-block {
+    order: 3;
+    display: block;
+  }
+  
+  .about__row:last-child .about__image-block {
+    order: 5;
+    display: block;
+    margin-bottom: 0;
+  }
+  .about__row:last-child .about__text-block {
+    order: 6;
+    display: block;
+  }
+  
+  /* Убираем лишние отступы */
+  .about__image:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+  .about__title {
+    font-size: 36px;
+  }
+  
+  .about__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .about__image {
+    border-radius: 15px;
+    margin: 15px 0 25px 0;
+  }
+}
+
+/* ===== СЕКЦИЯ "КАТЕГОРИИ" ===== */
+.categories {
+  padding: 60px 0;
+  background-color: var(--color-white, #fff);
+  width: 100%;
+}
+
+.categories__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 75px;
+}
+
+/* Заголовок и кнопка в одной строке */
+.categories__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  width: 100%;
+}
+
+.categories__title {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: var(--font-size-heading, 78px);
+  font-weight: 400;
+  color: var(--color-black, #000);
+  margin: 0;
+}
+
+.categories__button {
+  display: inline-flex; /* Меняем на inline-flex */
+  align-items: center; /* Выравниваем по вертикали */
+  gap: 10px; /* Расстояние между текстом и иконкой */
+  padding: 15px 40px;
+  background-color: #f4efef;
+  color: var(--color-black, #000);
+  text-decoration: none;
+  border-radius: 65px;
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: 28px;
+  font-weight: 400;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
+
+.categories__button-icon {
+  width: 22px; /* Задаем ширину иконки */
+  height: 22px; /* Задаем высоту иконки */
+  display: block;
+}
+
+.categories__button:hover {
+  opacity: 0.8;
+}
+
+.categories__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px; /* Расстояние между карточками 30px */
+}
+
+.categories__item {
+  position: relative;
+  width: 190px; /* Фиксированная ширина */
+  height: 230px; /* Фиксированная высота */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto; /* Центрирование в grid */
+}
+
+.categories__icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Сохраняем пропорции иконки */
+  display: block;
+}
+
+.categories__name {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 45px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: 18px;
+  color: var(--color-black, #000);
+  text-align: center;
+  margin: 0;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+/* Для планшетов */
+@media (max-width: 1024px) {
+  .categories__grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
+
+/* Для мобильных устройств */
+@media (max-width: 768px) {
+  .categories__container {
+    padding: 0 20px;
+  }
+
+  .categories__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+
+  .categories__title {
+    font-size: 48px;
+  }
+
+  .categories__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+  }
+
+  .categories__button {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories__grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .categories__item {
+    width: 100%;
+    max-width: 190px; /* Ограничиваем максимальную ширину */
+  }
+}
+
+/* ===== СЕКЦИЯ "ПОПУЛЯРНЫЕ РЕЦЕПТЫ" ===== */
+.popular {
+  padding: 60px 0; /* Отступы сверху и снизу 60px */
+  background-color: rgba(227, 216, 216, 0.4);
+  width: 100%;
+}
+
+.popular__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 75px; /* Отступы по бокам как в макете */
+}
+
+.popular__title {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: var(--font-size-heading, 78px);
+  font-weight: 400;
+  color: var(--color-black, #000);
+  text-align: center; /* Заголовок по центру */
+  margin-bottom: 60px;
+}
+.popular__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+/* Стрелки */
+.popular__nav-left,
+.popular__nav-right {
+  flex-shrink: 0;
+  width: auto;
+  height: 85px; /* Высота 85px */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.popular__nav-left:hover,
+.popular__nav-right:hover {
+  background-color: #f0f0f0;
+}
+
+.popular__nav-icon {
+  width: auto;
+  height: 85px;
+  display: block;
+}
+
+/* Сетка карточек */
+.popular__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  flex-grow: 1;
+}
+
+/* Нижняя навигация (точки) */
+.popular__dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.popular__dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.popular__dot.active {
+  background-color: var(--color-brown-dark, #3d2621);
+}
+
+.popular__dot:hover {
+  background-color: #999;
+}
+
+.popular__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+  gap: 30px; /* Расстояние между карточками */
+  justify-content: center;
+}
+.recipe-card {
+  width: 261px;
+  height: 338px;
+  background-color: white;
+  border-radius: 30px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.recipe-card__figure {
+  width: 100%;
+  height: 180px; /* Высота картинки */
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.recipe-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.recipe-card__figcaption {
+  display: none; /* Скрываем подпись, она не нужна в дизайне */
+}
+
+.recipe-card__title {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 15px 15px 10px 15px;
+  color: var(--color-black, #000);
+}
+
+.recipe-card__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipe-card__link:hover {
+  text-decoration: underline;
+}
+
+.recipe-card__info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 15px 15px 15px;
+  margin-top: auto; /* Прижимаем к низу */
+}
+
+.recipe-card__time-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.recipe-card__time {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: 20px;
+  color: var(--color-black, #000);
+  margin: 0;
+}
+/*АДАПТИВНОСТЬ*/
+
+/* Для планшетов (до 1024px) */
+@media (max-width: 1024px) {
+  .popular__container {
+    padding: 0 40px;
+  }
+  
+  .popular__title {
+    font-size: 60px;
+    margin-bottom: 40px;
+  }
+  
+  .popular__grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки на планшете */
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  .recipe-card {
+    width: 220px; /* Уменьшаем карточку пропорционально */
+    height: 285px; /* Пропорционально высота (220/261*338 ≈ 285) */
+  }
+  
+  .recipe-card__figure {
+    height: 152px; /* Пропорционально высота картинки (220/261*180 ≈ 152) */
+  }
+  
+  .recipe-card__title {
+    font-size: 18px; /* Уменьшаем шрифт */
+    margin: 12px 12px 8px 12px;
+  }
+  
+  .recipe-card__info {
+    margin: 0 12px 12px 12px;
+  }
+  
+  .recipe-card__time {
+    font-size: 18px;
+  }
+  
+  .recipe-card__time-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .popular__nav-left,
+  .popular__nav-right {
+    height: 70px; /* Уменьшаем стрелки */
+  }
+  
+  .popular__nav-icon {
+    height: 70px;
+  }
+}
+
+/* Для мобильных (до 768px) */
+@media (max-width: 768px) {
+  .popular {
+    padding: 40px 0;
+    background-color: rgba(227, 216, 216, 0.4);
+    width: 100%;
+  }
+  
+  .popular__container {
+    max-width: 100%; /* Важно! Контейнер занимает всю ширину */
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+  
+  .popular__title {
+    font-size: 42px;
+    margin-bottom: 25px;
+  }
+  
+  .popular__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    width: 100%; /* Важно для фона */
+  }
+  
+  .popular__grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px;
+    width: 100%; /* Сетка занимает всю ширину */
+  }
+  
+  .recipe-card {
+    width: 130px; /* Еще меньше */
+    height: 169px;
+    margin: 0 auto; /* Центрируем */
+  }
+  
+  .recipe-card__figure {
+    width: 100%;
+    height: 90px;
+  }
+  
+  .recipe-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .recipe-card__title {
+    font-size: 11px;
+    margin: 6px 6px 3px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .recipe-card__info {
+    margin: 0 6px 6px 6px;
+    gap: 3px;
+  }
+  
+  .recipe-card__time-icon {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .recipe-card__time {
+    font-size: 9px;
+  }
+  
+  .popular__nav-left,
+  .popular__nav-right {
+    height: 35px; /* Уменьшаем стрелки */
+  }
+  
+  .popular__nav-icon {
+    height: 35px;
+  }
+  
+  .popular__dots {
+    margin-top: 15px;
+    gap: 6px;
+  }
+}
+
+/* Для экранов 400px и меньше */
+@media (max-width: 400px) {
+  .popular__container {
+    padding: 0 10px;
+  }
+  
+  .popular__grid {
+    gap: 8px;
+  }
+  
+  .recipe-card {
+    width: 110px; /* Совсем маленькие */
+    height: 143px;
+  }
+  
+  .recipe-card__figure {
+    height: 76px;
+  }
+  
+  .recipe-card__title {
+    font-size: 10px;
+    margin: 4px 4px 2px 4px;
+  }
+  
+  .recipe-card__info {
+    margin: 0 4px 4px 4px;
+  }
+  
+  .recipe-card__time-icon {
+    width: 8px;
+    height: 8px;
+  }
+  
+  .recipe-card__time {
+    font-size: 8px;
+  }
+}
+
+
+/* ===== СЕКЦИЯ "ФЕСТИВАЛЬ ВКУСОВ" ===== */
+.promo {
+  padding: 60px 0;
+  background-color: var(--color-white, #fff);
+  width: 100%;
+}
+
+.promo__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 75px;
+}
+
+.promo__title {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: var(--font-size-heading, 78px);
+  font-weight: 400;
+  color: var(--color-black, #000);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Карточка с закруглением */
+.promo__content-wrapper {
+  width: 1130px;
+  height: 575px;
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Левая часть с изображением - явно указываем порядок */
+.promo__figure {
+  flex: 1;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  order: 1; /* Первый по порядку */
+}
+
+.promo__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.promo__figcaption {
+  display: none;
+}
+
+/* Правая часть с текстом */
+.promo__text-content {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  order: 2; /* Второй по порядку */
+}
+
+.promo__subtitle {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: 36px;
+  font-weight: 400;
+  color: var(--color-black, #000);
+  margin: 0 0 30px 0;
+}
+
+.promo__content {
+  flex: 1;
+}
+
+.promo__text {
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--color-black, #000);
+  margin: 0;
+}
+
+.promo__button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: var(--color-brown-dark, #3d2621);
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  font-family: var(--font-family-main, 'Open Sans', sans-serif);
+  font-size: 18px;
+  transition: opacity 0.3s ease;
+  align-self: flex-start;
+  margin-top: 30px;
+}
+
+.promo__button:hover {
+  opacity: 0.8;
+}
+
+/* Для планшетов */
+@media (max-width: 1200px) {
+  .promo__content-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .promo__figure,
+  .promo__text-content {
+    order: 0; /* Сбрасываем порядок для мобильных */
+  }
+
+  .promo__figure {
+    height: 400px;
+  }
+
+  .promo__text-content {
+    padding: 40px;
+  }
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+  .promo__container {
+    padding: 0 20px;
+  }
+
+  .promo__title {
+    font-size: 48px;
+    margin-bottom: 30px;
+  }
+
+  .promo__figure {
+    height: 300px;
+  }
+
+  .promo__text-content {
+    padding: 30px 20px;
+  }
+
+  .promo__subtitle {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .promo__button {
+    align-self: stretch;
+    text-align: center;
+  }
+}
+/* Обертка для стрелок и контента */
+.promo__wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Стрелки */
+.promo__nav-left,
+.promo__nav-right {
+  flex-shrink: 0;
+  width: auto;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.promo__nav-left:hover,
+.promo__nav-right:hover {
+  opacity: 0.7;
+}
+
+.promo__nav-icon {
+  width: auto;
+  height: 85px;
+  display: block;
+}
+
+/* Основной контент */
+.promo__content-wrapper {
+  flex-grow: 1;
+  width: 1130px;
+  height: 575px;
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* Для планшетов */
+@media (max-width: 1200px) {
+  .promo__wrapper {
+    gap: 10px;
+  }
+
+  .promo__nav-left,
+  .promo__nav-right {
+    height: 70px;
+  }
+
+  .promo__nav-icon {
+    height: 70px;
+  }
+
+  .promo__content-wrapper {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }
+}
+
+/* Для мобильных */
+@media (max-width: 768px) {
+  .promo__nav-left,
+  .promo__nav-right {
+    display: none; /* Прячем стрелки на мобильных */
+  }
+}
