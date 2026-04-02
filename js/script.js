@@ -18,7 +18,7 @@ import {
     showNotification
 } from './utils/helpers.js';
 
-// ========== ИНИЦИАЛИЗАЦИЯ ==========
+// ИНИЦИАЛИЗАЦИЯ 
 const storage = new StorageManager('tastyblog_recipes', defaultRecipes);
 const modal = new ModalManager('recipe-modal', 'recipe-detail');
 const timer = new Timer();
@@ -33,7 +33,7 @@ let state = {
     editingId: null
 };
 
-// ========== ОСНОВНЫЕ ФУНКЦИИ ==========
+// ОСНОВНЫЕ ФУНКЦИИ 
 function filterRecipes(recipes) {
     let filtered = [...recipes];
     
@@ -118,7 +118,7 @@ function saveAndRefresh(recipes) {
     displayRecipes();
 }
 
-// ========== CRUD ОПЕРАЦИИ ==========
+// CRUD 
 function addRecipe(name, time, description, image, category) {
     const newRecipe = {
         id: Date.now().toString(),
@@ -203,7 +203,7 @@ function resetRecipeForm() {
     if (cancelBtn) cancelBtn.style.display = 'none';
 }
 
-// ========== ОТОБРАЖЕНИЕ ДЕТАЛЕЙ ==========
+// ОТОБРАЖЕНИЕ ДЕТАЛЕЙ
 function openRecipeDetail(recipeId) {
     const recipe = state.recipes.find(r => r.id === recipeId);
     if (!recipe) return;
@@ -254,9 +254,9 @@ function openTimer(minutes, recipeName) {
 function startTimerHandler() {
     const display = document.getElementById('timer-display');
     timer.start(display, (seconds) => {
-        if (seconds === 60) showNotification('⏰ Осталась 1 минута!');
+        if (seconds === 60) showNotification(' Осталась 1 минута!');
         if (seconds === 0) {
-            showNotification('✅ Время вышло! Приятного аппетита!');
+            showNotification(' Время вышло! Приятного аппетита!');
             if (display) {
                 display.style.background = '#ff6b6b';
                 display.style.color = 'white';
@@ -265,7 +265,7 @@ function startTimerHandler() {
     });
 }
 
-// ========== ФОРМА И ВАЛИДАЦИЯ ==========
+// ФОРМА И ВАЛИДАЦИЯ
 function initRecipeForm() {
     const form = document.getElementById('recipe-form');
     if (!form) return;
@@ -296,7 +296,13 @@ function initRecipeForm() {
         
         input.addEventListener('input', () => clearErrors(input));
     });
-    
+      const searchInput = document.getElementById('recipe-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', () => {
+            state.currentPage = 0;  
+            displayRecipes();   
+        });
+    }
     // Отправка формы
     form.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -335,7 +341,7 @@ function initRecipeForm() {
     });
 }
 
-// ========== НАВИГАЦИЯ ==========
+// НАВИГАЦИЯ
 function initNavigation() {
     const leftArrow = document.querySelector('.popular__nav-left');
     const rightArrow = document.querySelector('.popular__nav-right');
@@ -363,7 +369,7 @@ function initNavigation() {
     }
 }
 
-// ========== ТАБЫ ==========
+// ТАБЫ
 function initTabs() {
     const categoryBtns = document.querySelectorAll('.category-compact');
     const allBtn = document.querySelector('.categories-compact__all');
@@ -390,7 +396,7 @@ function initTabs() {
     }
 }
 
-// ========== ОБРАБОТЧИКИ КОММЕНТАРИЕВ ==========
+// ОБРАБОТЧИКИ КОММЕНТАРИЕВ
 function addCommentHandler(recipeId) {
     const author = document.getElementById('comment-author')?.value.trim();
     const text = document.getElementById('comment-text')?.value.trim();
@@ -415,7 +421,7 @@ function deleteCommentHandler(recipeId, index) {
     }
 }
 
-// ========== ГЛОБАЛЬНЫЕ ХЕНДЛЕРЫ ==========
+// ГЛОБАЛЬНЫЕ ХЕНДЛЕРЫ
 window.openRecipeDetailHandler = openRecipeDetail;
 window.openTimerHandler = openTimer;
 window.startTimerHandler = startTimerHandler;
@@ -432,7 +438,7 @@ window.addCommentHandler = addCommentHandler;
 window.deleteCommentHandler = deleteCommentHandler;
 window.modal = modal;
 
-// ========== ДЕЛЕГИРОВАНИЕ СОБЫТИЙ ==========
+// ДЕЛЕГИРОВАНИЕ СОБЫТИЙ
 document.addEventListener('click', (e) => {
     if (e.target.classList.contains('edit-btn')) {
         editRecipe(e.target.dataset.id);
@@ -442,9 +448,8 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// ========== ЗАПУСК ==========
+// ЗАПУСК
 document.addEventListener('DOMContentLoaded', () => {
-    // Запрос разрешения на уведомления
     if (Notification.permission === 'default') {
         Notification.requestPermission();
     }

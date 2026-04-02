@@ -1,4 +1,3 @@
-// ========== ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ДЛЯ ВАЛИДАЦИИ ==========
 
 // Валидация названия рецепта (не пустое, минимум 3 символа)
 export const validateRecipeName = (name) => {
@@ -40,12 +39,11 @@ export const validateDescription = (description) => {
     return { isValid: true, message: '' };
 };
 
-// Валидация URL изображения (опционально)
+// Валидация URL изображения
 export const validateImageUrl = (url) => {
     if (!url || url.trim() === '') {
-        return { isValid: true, message: '' }; // Необязательное поле
+        return { isValid: true, message: '' }; 
     }
-    // Простая проверка на расширение изображения
     const validExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.webp', '.svg'];
     const lowerUrl = url.toLowerCase();
     const hasValidExtension = validExtensions.some(ext => lowerUrl.endsWith(ext));
@@ -114,8 +112,6 @@ export const validateRecipeForm = (name, time, description, image) => {
         errors: errors
     };
 };
-
-// Добавьте в конец файла helpers.js:
 
 // Защита от XSS
 export function escapeHtml(str) {

@@ -23,8 +23,8 @@ export class RecipeCardRenderer {
                     <p class="recipe-card__time">${recipe.time} мин</p>
                 </div>
                 <div class="recipe-card__actions" style="margin: 10px 15px 15px 15px; display: flex; gap: 8px;">
-                    <button class="edit-btn" data-id="${recipe.id}">✏️ Редактировать</button>
-                    <button class="delete-btn" data-id="${recipe.id}">🗑️ Удалить</button>
+                    <button class="edit-btn" data-id="${recipe.id}"> Редактировать</button>
+                    <button class="delete-btn" data-id="${recipe.id}"> Удалить</button>
                 </div>
             </article>
         `;

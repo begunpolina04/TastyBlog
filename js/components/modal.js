@@ -5,7 +5,6 @@ export class ModalManager {
         this.onClose = null;
         
         if (this.modal) {
-            // Закрытие по клику на фон
             window.onclick = (event) => {
                 if (event.target === this.modal) this.close();
             };
