@@ -1,12 +1,12 @@
-/* ===== ОСНОВНЫЕ СТИЛИ ШАПКИ ===== */
+
 .header {
-    position: absolute; /* Поверх фона */
+    position: absolute; 
     top: 40px;
     left: 0;
     width: 100%;
     z-index: 100;
-    background: transparent; /* Прозрачный фон */
-    box-shadow: none; /* Убираем тень */
+    background: transparent; 
+    box-shadow: none; 
 }
 
 .header__container {
@@ -15,7 +15,7 @@
     justify-content: space-between;
     max-width: 100%;
     margin: 0;
-    padding: 0 75px; /* Отступы слева и справа по 75px */
+    padding: 0 75px; 
 }
 
 .header__logo-img {
@@ -23,7 +23,7 @@
     height: auto;
 }
 
-/* ===== НАВИГАЦИЯ ===== */
+
 .nav__list {
     display: flex;
     list-style: none;
@@ -34,7 +34,7 @@
 
 .nav__link {
     text-decoration: none;
-    color: white; /* Белый текст на фоне */
+    color: white; 
     font-family: var(--font-family-main, 'Open Sans', sans-serif);
     font-size: 20px;
     font-weight: 400;
@@ -46,11 +46,11 @@
 
 .nav__link:hover {
     box-shadow: 0 4px 15px rgba(217, 217, 217, 0.3);
-    background-color: rgba(217, 217, 217, 0.3); /* D9D9D9 с прозрачностью 30% */
+    background-color: rgba(217, 217, 217, 0.3); 
     color: white;
 }
 
-/* ===== ИКОНКИ ===== */
+
 .header__icons {
     display: flex;
     gap: 20px;
@@ -60,7 +60,7 @@
 .header__icon {
     width: 24px;
     height: 24px;
-    filter: brightness(0) invert(1); /* Делает иконки белыми */
+    filter: brightness(0) invert(1); 
     transition: opacity 0.3s ease;
 }
 
@@ -68,7 +68,7 @@
     opacity: 0.8;
 }
 
-/* ===== БУРГЕР (скрыт на десктопах) ===== */
+
 .burger-toggle {
     display: none;
 }
@@ -90,10 +90,10 @@
     transition: all 0.3s ease;
 }
 
-/* ===== МЕДИАЗАПРОС ДЛЯ ПЛАНШЕТОВ ===== */
+
 @media (max-width: 1024px) {
     .header__container {
-        padding: 0 40px; /* Уменьшаем отступы */
+        padding: 0 40px;
     }
     
     .nav__list {
@@ -108,7 +108,7 @@
         gap: 15px;
     }
 }
-/* ===== МЕДИАЗАПРОС ДЛЯ МОБИЛЬНЫХ ===== */
+
 @media (max-width: 768px) {
     .header {
         top: 20px;
@@ -121,20 +121,19 @@
         justify-content: space-between;
     }
     
-    /* Уменьшаем иконки на мобильных */
+    
     .header__icon {
-        width: 16px !important;  /* Уменьшено с 24px до 16px */
+        width: 16px !important;  
         height: 16px !important;
     }
     
-    /* Уменьшаем расстояние между иконками */
-    .header__icons {
+       .header__icons {
         gap: 8px;
         margin-right: auto;
         order: 2;
     }
     
-    /* Показываем бургер */
+  
     .burger {
         display: flex;
         order: 3;
@@ -146,7 +145,7 @@
         height: 2px;
     }
 
-    /* Скрываем обычную навигацию */
+  
     .header__nav {
         position: fixed;
         top: 0;
@@ -196,17 +195,17 @@
     }
 }
 
-/* ===== ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ ===== */
+
 @media (max-width: 480px) {
     .header__container {
         padding: 0 15px;
     }
 
     .header__logo-img {
-        width: 80px; /* Уменьшаем логотип */
+        width: 80px; 
     }
     
-    /* Еще меньше иконки на очень маленьких экранах */
+   
     .header__icon {
         width: 14px !important;
         height: 14px !important;

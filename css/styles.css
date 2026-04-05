@@ -29,7 +29,7 @@ body {
   padding: 0 20px;
 }
 
-/* ===== СТИЛИ ДЛЯ ПЛАНШЕТОВ ===== */
+
 @media (max-width: 1024px) {
   .section {
     padding: 40px 0;
@@ -59,7 +59,7 @@ body {
   }
 }
 
-/* ===== СТИЛИ ДЛЯ МОБИЛЬНЫХ ===== */
+
 @media (max-width: 768px) {
   .section {
     padding: 30px 0;
@@ -123,4 +123,481 @@ body {
     width: 100%;
     text-align: center;
   }
+}
+/* ===== API БЛОК И ИЗБРАННОЕ ===== */
+
+/* Секция избранного */
+.favorites-api-section {
+  background: white;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 30px 0 20px;
+  border: 1px solid #f0e4d8;
+}
+
+.favorites-api__title {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #ff6b6b;
+  display: inline-block;
+}
+
+.favorites-api__list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.favorite-api-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f0e4d8;
+  transition: background 0.2s;
+}
+
+.favorite-api-item:hover {
+  background: #fef5ed;
+  padding-left: 8px;
+}
+
+.favorite-api-item__name {
+  cursor: pointer;
+  flex: 1;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.favorite-api-item__name:hover {
+  color: #ff6b6b;
+  text-decoration: underline;
+}
+
+.favorite-api-item__remove {
+  background: none;
+  border: none;
+  color: #ffaaaa;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 0 8px;
+  transition: color 0.2s;
+}
+
+.favorite-api-item__remove:hover {
+  color: #ff4444;
+}
+
+.favorites-api__empty {
+  text-align: center;
+  color: #aaa;
+  padding: 20px;
+  font-style: italic;
+}
+
+/* Секция API */
+.api-section {
+  margin: 20px 0 30px;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+}
+
+.api-section__title {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.api-section__controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.api-btn {
+  border: none;
+  padding: 12px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+.api-btn:hover {
+  transform: translateY(-2px);
+}
+
+.api-btn--random {
+  background: #4ecdc4;
+  color: white;
+}
+
+.api-btn--search {
+  background: #ff6b6b;
+  color: white;
+}
+
+.api-search__input {
+  padding: 12px 20px;
+  border-radius: 40px;
+  border: 1px solid #e5ddd3;
+  flex: 1;
+  min-width: 200px;
+  font-size: 15px;
+  background: #fefcf9;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.api-search__input:focus {
+  outline: none;
+  border-color: #cbbaa8;
+  background: #fff;
+}
+
+/* Сетка для API-рецептов (такая же как у популярных рецептов) */
+.api-recipes__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Карточка API-рецепта (точно как у популярных рецептов) */
+.api-recipe-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 100%;
+}
+
+.api-recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.api-recipe-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.api-recipe-card__content {
+  padding: 15px;
+}
+
+.api-recipe-card__title {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 40px;
+}
+
+.api-recipe-card__meta {
+  color: #999;
+  font-size: 0.8rem;
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.api-recipe-card__buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.api-recipe-card__btn {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.api-recipe-card__btn--detail {
+  background: #efebe6;
+  color: #8b765a;
+  flex: 1;
+}
+
+.api-recipe-card__btn--detail:hover {
+  background: #e5ddd3;
+}
+
+.api-recipe-card__btn--favorite {
+  background: #efebe6;
+  color: #ff6b6b;
+  flex: 1;
+}
+
+.api-recipe-card__btn--favorite:hover {
+  background: #ff6b6b;
+  color: white;
+}
+
+.api-recipe-card__btn--favorite.active {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* Адаптив для API-сетки */
+@media (max-width: 1024px) {
+  .api-recipes__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .api-recipes__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .api-section__controls {
+    flex-direction: column;
+  }
+  
+  .api-search__input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .api-recipes__container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Ограничение для карточек, чтобы они не были слишком широкими */
+.popular__grid,
+.api-recipes__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.api-recipe-card {
+  max-width: 280px;
+  width: 100%;
+  margin: 0 auto;
+}
+/* ===== МОДАЛЬНЫЕ ОКНА ДЛЯ API ===== */
+
+/* Модальное окно деталей рецепта */
+.recipe-detail-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.recipe-detail-modal__content {
+  background: white;
+  max-width: 600px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  margin: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: modalFadeIn 0.3s ease;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.recipe-detail-modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+  z-index: 1;
+}
+
+.recipe-detail-modal__close:hover {
+  color: #ff6b6b;
+}
+
+.recipe-detail-modal__image {
+  width: 100%;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+.recipe-detail-modal__ingredients {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.recipe-detail-modal__ingredients li {
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.recipe-detail-modal__favorite-btn {
+  background: #ff6b6b;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.recipe-detail-modal__favorite-btn:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+}
+
+/* Модальное окно избранного */
+.favorites-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 10001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorites-modal__content {
+  background: white;
+  max-width: 450px;
+  width: 90%;
+  max-height: 70vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 25px;
+  position: relative;
+  animation: modalFadeIn 0.3s ease;
+}
+
+.favorites-modal__close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.2s;
+}
+
+.favorites-modal__close:hover {
+  color: #ff6b6b;
+}
+
+.favorites-modal__title {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.favorites-modal__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.favorites-modal__item-name {
+  cursor: pointer;
+  flex: 1;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.favorites-modal__item-name:hover {
+  color: #ff6b6b;
+  text-decoration: underline;
+}
+
+.favorites-modal__item-remove {
+  background: none;
+  border: none;
+  color: #ffaaaa;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 5px 10px;
+  transition: color 0.2s;
+}
+
+.favorites-modal__item-remove:hover {
+  color: #ff4444;
+}
+
+/* Тосты */
+.api-toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #4ecdc4;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 40px;
+  z-index: 10000;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+/* Сообщения API */
+.api-message {
+  text-align: center;
+  padding: 60px;
+  color: #999;
+  font-size: 1.1rem;
+  grid-column: 1 / -1;
+}
+
+.api-error {
+  text-align: center;
+  padding: 60px;
+  color: #ff4444;
+  grid-column: 1 / -1;
 }

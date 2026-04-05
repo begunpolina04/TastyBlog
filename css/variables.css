@@ -1,16 +1,16 @@
 :root {
-  /* Цвета из макета Figma */
+ 
   --color-white: #FFFFFF;
   --color-beige-light: #F4EFEF;
   --color-gray-light: #E3D8D8;
   --color-black: #000000;
   --color-brown-dark: #3D2621;
 
-  /* Типография из макета - все используют Open Sans */
+ 
   --font-family-main: 'Open Sans', sans-serif;
   --font-weight-regular: 400;
 
-  /* Размеры шрифтов */
+
   --font-size-heading: 78px;
   --font-size-body: 28px;
   --font-size-nav: 20px;
@@ -18,30 +18,30 @@
   --font-size-category-small: 18px;
   --font-size-card: 20px;
 
-  /* Межстрочные интервалы */
+
   --line-height-body: 35px;
   --line-height-nav: 10.9px;
   --line-height-category: 15px;
   --line-height-card: 20px;
 
-  /* Межбуквенные интервалы */
+
   --letter-spacing-base: 0.34px;
   --letter-spacing-card: 0.52px;
 
-  /* Скругления */
+ 
   --border-radius-button: 15px;
   --border-radius-card: 30px;
   --border-radius-category: 30px;
   --border-radius-button-large: 65px;
 
-  /* Отступы из макета */
+ 
   --spacing-header: 60px;
   --spacing-about-container: 50px;
   --spacing-about-text-image: 115px;
   --spacing-between-categories: 30px;
   --spacing-between-cards: 40px;
 
-  /* Breakpoints согласно адаптивному макету */
+  
   --breakpoint-tablet: 768px;
   --breakpoint-desktop: 1024px;
 }

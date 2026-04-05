@@ -1,14 +1,455 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TastyBlog</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <h1>добро пожаловать в TastyBlog!</h1>
-    <p>это стартовая страница моего веб-приложения.</p>
-    <script src="js/script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="TastyBlog — кулинарная вселенная для тех, кто любит готовить и пробовать новое. Рецепты, мастер-классы и кулинарное вдохновение."
+    />
+    <title>TastyBlog — кулинарные рецепты и вдохновение</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Перейти к основному содержанию</a>
+
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">
+          <img
+            src="images/TastyBlog.svg"
+            alt="TastyBlog логотип"
+            class="header__logo-img"
+          />
+        </div>
+
+        <!-- Чекбокс для управления меню (ОБЯЗАТЕЛЬНО) -->
+        <input type="checkbox" id="burger-toggle" class="burger-toggle" />
+
+        <!-- Лейбл с иконкой бургера -->
+        <label for="burger-toggle" class="burger">
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </label>
+
+        <nav class="header__nav nav">
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Проекты</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Рецепты</a></li>
+            <li class="nav__item">
+              <a href="#" class="nav__link">Продукция</a>
+            </li>
+            <li class="nav__item"><a href="#" class="nav__link">О нас</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Кухни</a></li>
+          </ul>
+        </nav>
+
+        <div class="header__icons">
+          <a href="#" class="header__icon-link">
+            <img
+              src="images/icon-search.svg"
+              alt="Поиск"
+              class="header__icon"
+            />
+          </a>
+          <a href="#" class="header__icon-link">
+            <img
+              src="images/icon-profile.svg"
+              alt="Личный кабинет"
+              class="header__icon"
+            />
+          </a>
+          <a href="#" class="header__icon-link">
+            <img
+              src="images/favorites_icon.svg"
+              alt="Избранное"
+              class="header__icon"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="main">
+      <section class="hero">
+        <img src="images/home.png" alt="TastyBlog" class="hero__image" />
+        <div class="hero__container">
+          <!-- Здесь может быть заголовок, если нужен по макету -->
+          <!-- Например: <h1 class="hero__title">Добро пожаловать в TastyBlog</h1> -->
+        </div>
+      </section>
+
+      <!-- Секция "О нас" как NewsArticle -->
+      <section
+        class="about section"
+        itemscope
+        itemtype="https://schema.org/NewsArticle"
+      >
+        <div class="about__container">
+          <h2 class="about__title" itemprop="headline">О нас</h2>
+
+          <!-- Блок 1: Фото слева, текст справа -->
+          <div class="about__row-reverse">
+            <div class="about__image-block">
+              <img
+                src="images/aboutUs_1.png"
+                alt="Уютная атмосфера"
+                class="about__image"
+                itemprop="image"
+              />
+            </div>
+            <div class="about__text-block" itemprop="articleBody">
+              <p class="about__text">
+                TastyBlog — это кулинарная вселенная для тех, кто любит готовить
+                и пробовать новое. На нашей платформе каждый может не только
+                найти вдохновение, но и поделиться своими рецептами —
+                добавляйте, сохраняйте и вдохновляйте других.
+              </p>
+            </div>
+          </div>
+
+          <!-- Блок 2: Текст слева, фото справа -->
+          <div class="about__row">
+            <div class="about__text-block" itemprop="articleBody">
+              <p class="about__text">
+                Мы верим, что вкусная еда доступна каждому. На TastyBlog вы
+                найдёте рецепты с понятными инструкциями и яркими фото — от
+                новичков до профи. Мы создаём пространство, где можно
+                экспериментировать, учиться и делиться опытом.
+              </p>
+            </div>
+            <div class="about__image-block">
+              <img
+                src="images/aboutUs_2.png"
+                alt="Работы участников"
+                class="about__image"
+              />
+            </div>
+          </div>
+
+          <!-- Блок 3: Фото слева, текст справа -->
+          <div class="about__row-reverse">
+            <div class="about__image-block">
+              <img
+                src="images/aboutUs_3.png"
+                alt="Мастер-класс"
+                class="about__image"
+              />
+            </div>
+            <div class="about__text-block" itemprop="articleBody">
+              <p class="about__text">
+                Мы проводим мастер-классы с шеф-поварами и блогерами, где можно
+                готовить своими руками, узнавать секреты профессионалов и
+                отлично проводить время в компании единомышленников.
+              </p>
+            </div>
+          </div>
+
+          <meta itemprop="datePublished" content="2024-01-15" />
+          <meta itemprop="author" content="TastyBlog" />
+        </div>
+      </section>
+
+      <!-- Секция "Популярные рецепты" с карточками Recipe -->
+      <section class="popular section">
+        <div class="popular__container">
+          <h2 class="popular__title">Популярные рецепты</h2>
+
+          <!-- КАТЕГОРИИ как на фото -->
+          <div class="categories-compact">
+            <div class="categories-compact__header">
+              <h3 class="categories-compact__title">Категории</h3>
+              <button
+                class="categories-compact__all active"
+                data-category="all"
+              >
+                Все рецепты
+              </button>
+            </div>
+            <div class="categories-compact__grid">
+              <button class="category-compact" data-category="vegan">
+                <img
+                  src="images/category_vegan.png"
+                  alt="Vegan"
+                  class="category-compact__icon"
+                />
+                <span class="category-compact__name">Vegan</span>
+              </button>
+              <button class="category-compact" data-category="dessert">
+                <img
+                  src="images/category_desserts.png"
+                  alt="Десерты"
+                  class="category-compact__icon"
+                />
+                <span class="category-compact__name">Десерты</span>
+              </button>
+              <button class="category-compact" data-category="lunch">
+                <img
+                  src="images/category_lunch.png"
+                  alt="Обед"
+                  class="category-compact__icon"
+                />
+                <span class="category-compact__name">Обед</span>
+              </button>
+              <button class="category-compact" data-category="breakfast">
+                <img
+                  src="images/category_breakfast.png"
+                  alt="Завтрак"
+                  class="category-compact__icon"
+                />
+                <span class="category-compact__name">Завтрак</span>
+              </button>
+              <button class="category-compact" data-category="fish">
+                <img
+                  src="images/category_fish.png"
+                  alt="Морепродукты"
+                  class="category-compact__icon"
+                />
+                <span class="category-compact__name">Морепродукты</span>
+              </button>
+              <button class="category-compact" data-category="meat">
+                <img
+                  src="images/category_meat.png"
+                  alt="Мясо"
+                  class="category-compact__icon"
+                />
+                <span class="category-compact__name">Мясо</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Поиск -->
+          <div class="recipe-search">
+            <input
+              type="text"
+              id="recipe-search"
+              placeholder=" Поиск рецептов по названию..."
+            />
+          </div>
+
+          <!-- Обертка для стрелок и сетки -->
+          <div class="popular__wrapper">
+            <div class="popular__nav-left">
+              <img
+                src="images/left_arrow.svg"
+                alt="Предыдущие"
+                class="popular__nav-icon"
+              />
+            </div>
+            <div id="recipes-grid" class="popular__grid"></div>
+            <div class="popular__nav-right">
+              <img
+                src="images/right_arrow.svg"
+                alt="Следующие"
+                class="popular__nav-icon"
+              />
+            </div>
+          </div>
+
+          <div class="popular__dots" id="recipes-dots"></div>
+<!-- ===== БЛОК ИЗБРАННОГО ===== -->
+<div class="favorites-api-section" id="favorites-api-section">
+  <h3 class="favorites-api__title">⭐ Моё избранное</h3>
+  <div id="favorites-api-list" class="favorites-api__list">
+    <p class="favorites-api__empty">Нет избранных рецептов</p>
+  </div>
+</div>
+
+<!-- ===== API БЛОК ===== -->
+<div class="api-section" id="api-section">
+  <h3 class="api-section__title">🌐 Рецепты из TheMealDB</h3>
+  <div class="api-section__controls">
+    <button id="api-random-btn" class="api-btn api-btn--random">🎲 Случайные рецепты</button>
+    <input type="text" id="api-search-input" class="api-search__input" placeholder="Поиск рецептов...">
+    <button id="api-search-btn" class="api-btn api-btn--search">🔍 Найти</button>
+  </div>
+  <div id="api-recipes-container" class="api-recipes__container"></div>
+</div>
+          <!-- ФОРМА ДОБАВЛЕНИЯ РЕЦЕПТА (под списком) -->
+          <div class="recipe-form-container">
+            <h3 class="recipe-form__title">➕ Добавить новый рецепт</h3>
+            <form id="recipe-form" class="recipe-form">
+              <div class="recipe-form__row">
+                <div class="recipe-form__group">
+                  <input
+                    type="text"
+                    id="recipe-name"
+                    placeholder="Название рецепта"
+                    required
+                  />
+                </div>
+                <div class="recipe-form__group">
+                  <input
+                    type="number"
+                    id="recipe-time"
+                    placeholder="Время (мин)"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="recipe-form__group">
+                <textarea
+                  id="recipe-description"
+                  placeholder="Описание рецепта..."
+                  required
+                ></textarea>
+              </div>
+              <div class="recipe-form__row">
+                <div class="recipe-form__group">
+                  <input
+                    type="text"
+                    id="recipe-image"
+                    placeholder="URL изображения (images/recipe_1.png)"
+                  />
+                </div>
+                <div class="recipe-form__group">
+                  <select id="recipe-category">
+                    <option value="all">Выберите категорию</option>
+                    <option value="breakfast">🍳 Завтрак</option>
+                    <option value="lunch">🥗 Обед</option>
+                    <option value="dessert">🍰 Десерт</option>
+                    <option value="vegan">🌱 Vegan</option>
+                    <option value="fish">🐟 Морепродукты</option>
+                    <option value="meat">🍖 Мясо</option>
+                  </select>
+                </div>
+              </div>
+              <div class="recipe-form__buttons">
+                <button type="submit" id="recipe-submit-btn">
+                  Добавить рецепт
+                </button>
+                <button type="button" id="recipe-cancel-btn" class="cancel-btn">
+                  Отмена
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== ДЕТАЛЬНАЯ СТРАНИЦА РЕЦЕПТА (модальное окно) ===== -->
+      <div id="recipe-modal" class="recipe-modal" style="display: none">
+        <div class="recipe-modal__content">
+          <span class="recipe-modal__close">&times;</span>
+          <div id="recipe-detail"></div>
+        </div>
+      </div>
+
+      <!-- Секция "Фестиваль вкусов" как ScholarlyArticle -->
+      <section
+        class="promo section"
+        itemscope
+        itemtype="https://schema.org/ScholarlyArticle"
+      >
+        <div class="promo__container">
+          <h2 class="promo__title" itemprop="headline">Фестиваль вкусов</h2>
+
+          <div class="promo__wrapper">
+            <!-- Левая стрелка -->
+            <div class="promo__nav-left">
+              <img
+                src="images/left_arrow.svg"
+                alt="Предыдущий"
+                class="promo__nav-icon"
+              />
+            </div>
+
+            <div class="promo__content-wrapper">
+              <div class="promo__text-content">
+                <h3 class="promo__subtitle" itemprop="alternativeHeadline">
+                  Шоколадное настроение
+                </h3>
+                <div class="promo__content" itemprop="articleBody">
+                  <p class="promo__text">
+                    Когда за окном холодно и серо, а на душе хочется тепла —
+                    приходит время горячего шоколада. Густой, бархатистый, с
+                    глубоким вкусом какао и нотками ванили, он словно укутывает
+                    в плед с головы до пят. Это не просто напиток, а момент
+                    чистого удовольствия, когда можно остановиться, выдохнуть и
+                    сказать себе: «всё хорошо».
+                  </p>
+                </div>
+                <a href="#" class="promo__button button"
+                  >Подробнее о рецептах</a
+                >
+              </div>
+              <figure class="promo__figure">
+                <img
+                  src="images/festivalOfTastes.png"
+                  alt="Горячий шоколад с маршмеллоу и корицей"
+                  class="promo__image"
+                  itemprop="image"
+                />
+                <figcaption class="promo__figcaption">
+                  Горячий шоколад с маршмеллоу
+                </figcaption>
+              </figure>
+            </div>
+
+            <!-- Правая стрелка -->
+            <div class="promo__nav-right">
+              <img
+                src="images/right_arrow.svg"
+                alt="Следующий"
+                class="promo__nav-icon"
+              />
+            </div>
+          </div>
+
+          <meta itemprop="datePublished" content="2024-02-01" />
+          <meta itemprop="author" content="TastyBlog" />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__logo">
+          <img
+            src="images/TastyBlog.svg"
+            alt="TastyBlog"
+            class="footer__logo-img"
+          />
+        </div>
+
+        <!-- Первая колонка навигации -->
+        <div class="footer__nav-column-1">
+          <a href="#" class="footer__nav-link">Личный кабинет</a>
+          <a href="#" class="footer__nav-link">Мастер-классы</a>
+          <a href="#" class="footer__nav-link">Адреса</a>
+        </div>
+
+        <!-- Вторая колонка навигации -->
+        <div class="footer__nav-column-2">
+          <a href="#" class="footer__nav-link">О компании</a>
+          <a href="#" class="footer__nav-link">Сотрудничество</a>
+          <a href="#" class="footer__nav-link">Реклама</a>
+        </div>
+
+        <div class="footer__contacts">
+          <div class="footer__social">
+            <img
+              src="images/icon-footer.png"
+              alt="Социальные сети"
+              class="footer__social-icon"
+            />
+          </div>
+          <a href="tel:+375331325678" class="footer__phone"
+            >+375 (33) 132-56-78</a
+          >
+          <a href="mailto:info@tastyblog.com" class="footer__email"
+            >info@tastyblog.com</a
+          >
+        </div>
+
+        <div class="footer__copyright">
+          <p class="footer__copyright-text">© Все права защищены</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/api/apiService.js"></script>
+  </body>
 </html>
